@@ -6,11 +6,11 @@ from sklearn.svm import SVC, NuSVC, LinearSVC
 
 
 def clf_example():
-    x = [[1], [2]]
-    y = ["spam", "not_spam"]
-    clf = MultinomialNB()
+    x = np.array([[-1, -1], [-2, -1], [-1, -2], [-2, -2], [1, 1], [2, 1], [2, 2], [1, 2]])
+    y = np.array(["spam", "spam", "spam", "spam", "not_spam", "not_spam", "not_spam", "not_spam"])
+    clf = SVC(gamma='auto')
     clf.fit(x, y)
-    print(clf.predict([[4]]))
+    print(clf.predict([[0.5, 0.5]]))
 
 
 def main():
@@ -18,7 +18,6 @@ def main():
 
 
 main()
-
 
 
 
